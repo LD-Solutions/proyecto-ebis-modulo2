@@ -3,15 +3,20 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "dev": "concurrently \"php artisan serve --host=127.0.0.1 --port=8000\" \"vite dev\"",
+        "dev:full": "concurrently \"php artisan serve --host=127.0.0.1 --port=8000\" \"vite dev\" \"tsc --noEmit -w\"",
         "build": "vite build",
-        "dev": "vite"
+        "type-check": "tsc --noEmit"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
+        "@types/node": "^24.0.12",
         "axios": "^1.8.2",
         "concurrently": "^9.0.1",
+        "glob": "^11.0.3",
         "laravel-vite-plugin": "^1.2.0",
         "tailwindcss": "^4.0.0",
+        "typescript": "^5.8.3",
         "vite": "^6.2.4"
     }
 }
